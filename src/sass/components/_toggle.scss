@@ -1,0 +1,105 @@
+.toggle {
+  --metric-toggle-thumb-size: 1rem;
+  --metric-toggle-thumb-space: 0.25rem;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  &__element {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: var(--metric-toggle-thumb-size);
+    width: 1em;
+    height: 1em;
+  }
+
+  &__decor {
+    position: relative;
+
+    display: block;
+    box-sizing: content-box;
+    margin-left: 0.5rem;
+    width: calc(
+      var(--metric-toggle-thumb-size) * 2 + var(--metric-toggle-thumb-space) * 2
+    );
+    height: calc(
+      var(--metric-toggle-thumb-size) + var(--metric-toggle-thumb-space) * 2
+    );
+
+    background: var(--color-mid);
+    border-radius: var(--metric-toggle-thumb-size);
+    border: 1px solid var(--color-light);
+
+    overflow: hidden;
+  }
+
+  &__thumb {
+    position: absolute;
+    top: var(--metric-toggle-thumb-space);
+    left: var(--metric-toggle-thumb-space);
+
+    display: grid;
+    place-items: center;
+    width: var(--metric-toggle-thumb-size);
+    height: var(--metric-toggle-thumb-size);
+
+    background: linear-gradient(
+        229.84deg,
+        rgba(255, 255, 255, 0) 14.29%,
+        rgba(48, 48, 48, 0.15) 81.82%
+      ),
+      #ffffff;
+    border-radius: var(--metric-toggle-thumb-size);
+
+    transform: none;
+    transition: transform 200ms cubic-bezier(1, 0, 0.55, 0.85);
+    will-change: transform;
+
+    z-index: 1;
+
+    &::before {
+      content: "";
+      display: none;
+      width: calc(
+        var(--metric-toggle-thumb-size) - var(--metric-toggle-thumb-space)
+      );
+      height: calc(
+        var(--metric-toggle-thumb-size) - var(--metric-toggle-thumb-space)
+      );
+
+      border: 1px solid var(--color-primary-light);
+      border-radius: calc(
+        var(--metric-toggle-thumb-size) - var(--metric-toggle-thumb-space)
+      );
+    }
+  }
+
+  // Animations
+  .toggle__decor:hover .toggle__thumb {
+    margin-left: 1px;
+  }
+
+  :checked + .toggle__decor:hover .toggle__thumb {
+    margin-left: -1px;
+  }
+
+  :checked + .toggle__decor {
+    background: var(--color-primary-light);
+  }
+
+  :checked + .toggle__decor .toggle__thumb {
+    transform: translateX(var(--metric-toggle-thumb-size)) rotate(270deg);
+  }
+
+  :focus + .toggle__decor:not(:hover) .toggle__thumb::before {
+    display: block;
+  }
+
+  :disabled + .toggle__decor {
+    filter: grayscale(1) brightness(1.5);
+    cursor: not-allowed;
+  }
+}

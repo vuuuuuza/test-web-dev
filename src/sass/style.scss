@@ -1,0 +1,14 @@
+@use "abstracts";
+@use "base";
+@use "utilities";
+@use "components";
+@use "lessons";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+

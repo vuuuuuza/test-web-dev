@@ -1,0 +1,15 @@
+.flexbox-lesson {
+  .sidebar-example {
+    .page {
+      display: flex;
+
+      > * {
+        padding: 1rem;
+      }
+    }
+
+    .sidebar {
+      background: var(--color-primary-x-light);
+    }
+  }
+}

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/svg+xml" href="test-project-icon.svg"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vite App</title>
+</head>
+<body>
+<section class="grid-lesson wrapper flow">
+  <h1>Grid</h1>
+  <div class="simple-grid">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+  <div class="intrinsic-grid">
+    <div class="item">Item 1 min-content</div>
+    <div class="item">Item 2 max-content</div>
+    <div class="item">Item 3 fit-content</div>
+    <div class="item">Item 4 even more min-content</div>
+    <div class="item">Item 5 even more max-content</div>
+    <div class="item">Item 6 even more fit-content</div>
+  </div>
+  <div class="min-max-grid">
+    <div class="item">Item 1 min-content</div>
+    <div class="item">Item 2 max-content</div>
+    <div class="item">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+      sit nobis minima fugit officia delectus? Deserunt a illum ipsum
+      maxime porro, beatae eos eveniet iusto temporibus! Qui quos cumque
+      reiciendis maiores explicabo tenetur nihil nemo quo, eum consequatur
+      atque non, reprehenderit odit vel impedit ipsum pariatur
+      accusantium, numquam facere beatae autem maxime excepturi? Aut modi,
+      itaque necessitatibus quas quae iure nemo sequi esse eaque
+      perferendis sunt, est laborum voluptas? Error, corporis? Quasi non
+      voluptatibus ab veritatis debitis unde, at ducimus consequatur quod
+      iure cumque sequi nostrum, nulla provident voluptatem incidunt.
+      Distinctio in accusamus quod ipsum obcaecati est, consequuntur
+      minima recusandae.
+    </div>
+    <div class="item">Item 4 even more min-content</div>
+    <div class="item">Item 5 even more max-content</div>
+    <div class="item">Item 6 even more fit-content</div>
+  </div>
+  <div class="column-12-grid">
+    <div class="item">Item 1 min-content</div>
+    <div class="item">Item 2 max-content</div>
+    <div class="item">
+      Item 3 fit-content Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Laborum enim voluptatum eum optio assumenda
+      architecto reiciendis cupiditate repellat quasi similique!
+    </div>
+    <div class="item">Item 4 even more min-content</div>
+    <div class="item">Item 5 even more max-content</div>
+    <div class="item">Item 6 even more fit-content</div>
+  </div>
+
+  <article class="repeating-fixed flow">
+    <h2>Repeating Fixed Grid</h2>
+    <div class="callout">
+      <div class="callout__text">
+        In this example there will be as many tracks as will fit into the
+        container with a fixed size of 200px. Resize the editor panel to
+        see the grid change.
+      </div>
+      <div class="callout__text">
+        <code class="code">
+          grid-template-columns: repeat(auto-fill, 200px);
+        </code>
+      </div>
+    </div>
+    <div class="repeating-fixed-grid">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+  </article>
+
+  <article class="repeating-responsive flow">
+    <h2>Auto Responsive Grid</h2>
+    <div class="callout">
+      <div class="callout__text">
+        In this example there will be as many tracks as will fit into the
+        container with a minimum size of 200px.
+      </div>
+      <div class="callout__text">
+        <code class="code">
+          grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+        </code>
+      </div>
+      <div class="callout__text">
+        <b>Resize the editor panel to see the grid change. </b>
+      </div>
+    </div>
+    <div class="repeating-responsive-grid">
+      <div class="item">Item 1 min-content</div>
+      <div class="item">Item 2 max-content</div>
+      <div class="item">
+        Item 3 fit-content Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Laborum enim voluptatum eum optio assumenda
+        architecto reiciendis cupiditate repellat quasi similique!
+      </div>
+    </div>
+    <div class="repeating-responsive-grid">
+      <div class="item">Item 1 min-content</div>
+      <div class="item">Item 2 max-content</div>
+      <div class="item">
+        Item 3 fit-content Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Laborum enim voluptatum eum optio assumenda
+        architecto reiciendis cupiditate repellat quasi similique!
+      </div>
+      <div class="item">Item 4 even more min-content</div>
+      <div class="item">Item 5 even more max-content</div>
+      <div class="item">Item 6 even more fit-content</div>
+    </div>
+  </article>
+
+  <article class="auto-fill-fit flow">
+    <h2>
+      <code class="code">auto-fill</code>
+      vs
+      <code class="code">auto-fit</code>
+    </h2>
+    <figure class="callout">
+      <p class="callout__text">
+        In this example there will be as many tracks as will fit into the
+        container with a minimum size of 100px.
+      </p>
+      <p class="callout__text">
+        <code class="code">grid-template-columns: repeat(auto-fill, minmax(100px,1fr));</code
+        >
+      </p>
+      <p>
+        Change between auto-fill and auto-fit keywords to see the
+        difference when our first row is not filled with items.
+      </p>
+    </figure>
+    <div class="controls">
+      <label for="switcher">
+        Choose column size
+        <select class="select" id="switcher" name="column-size">
+          <option value="auto-fill">auto-fill</option>
+          <option value="auto-fit">auto-fit</option>
+        </select>
+      </label>
+    </div>
+    <div class="auto-fill-fit-grid">
+      <div class="box">Item one</div>
+      <div class="box">Item two</div>
+      <div class="box">Item three</div>
+      <div class="box">Item three</div>
+      <div class="box">Item three</div>
+      <div class="box">Item three</div>
+      <div class="box">Item three</div>
+    </div>
+  </article>
+  <article class="auto-flow flow">
+    <h2>Grid auto flow</h2>
+    <div class="callout">
+      <div class="callout__text">
+        In this example try changes auto-flow from row to column and also
+        change the writing mode.
+      </div>
+    </div>
+    <div class="controls flow">
+      <label for="switcher-flow">
+        Choose auto flow
+        <select class="select" name="switcher-flow" id="switcher-flow">
+          <option value="row">row</option>
+          <option value="column">column</option>
+        </select>
+      </label>
+      <label for="switcher-writing-mode">
+        Choose writing mode
+        <select class="select" name="switcher-writing-mode" id="switcher-writing-mode">
+          <option value="horizontal-tb">horizontal-tb</option>
+          <option value="vertical-rl">vertical-rl</option>
+          <option value="vertical-lr">vertical-lr</option>
+        </select>
+      </label>
+    </div>
+    <div class="grid-auto-flow">
+      <div class="box">Item 1</div>
+      <div class="box">Item 2</div>
+      <div class="box">Item 3 has more text</div>
+      <div class="box">Item 4</div>
+      <div class="box">Item 5</div>
+    </div>
+  </article>
+  <article class="flow">
+    <h2>Spanning tracks</h2>
+    <div class="spanning-tracks">
+      <div class="item">First</div>
+      <div class="item">Second</div>
+      <div class="item">Third</div>
+    </div>
+  </article>
+
+  <article class="grid-dense-sparse-example flow">
+    <h2>Grid dense and sparse packing</h2>
+    <div class="callout">
+      <p class="callout__text">
+        Change the packing mode to see how this changes the layout of
+        items.
+      </p>
+    </div>
+    <div class="example flow">
+      <label for="toggle-dense" class="toggle">
+        Turn on dense packing
+        <input
+          type="checkbox"
+          class="toggle__element"
+          id="toggle-dense"
+        />
+        <span class="toggle__decor">
+                <span class="toggle__thumb"></span>
+              </span>
+      </label>
+      <div class="grid-dense-sparse">
+        <div class="box span-row">Item 1</div>
+        <div class="box">Item 2</div>
+        <div class="box span-col">Item 3 had more text</div>
+        <div class="box">Item 4</div>
+        <div class="box">Item 5</div>
+      </div>
+    </div>
+    <div class="example flow">
+      <label for="toggle-sparse" class="toggle">
+        Turn on dense packing
+        <input
+          type="checkbox"
+          class="toggle__element"
+          id="toggle-sparse"
+          checked
+        />
+        <span class="toggle__decor">
+            <span class="toggle__thumb"></span>
+          </span>
+      </label>
+      <div class="grid-dense-sparse">
+        <div class="box span-row">Item 1</div>
+        <div class="box">Item 2</div>
+        <div class="box span-col">Item 3 had more text</div>
+        <div class="box">Item 4</div>
+        <div class="box">Item 5</div>
+      </div>
+    </div>
+  </article>
+  <article class="example-placing-items flow">
+    <h2>Direction of grid lines</h2>
+    <div class="callout">
+      <div class="callout__text">
+        Change the direction and writing mode to see the layout change.
+      </div>
+    </div>
+    <label for="writing-mode">
+      Set writing mode
+      <select
+        class="example-placing-items__select select"
+        name="writing-mode"
+        id="writing-mode"
+      >
+        <option value="horizontal-tb">horizontal-tb</option>
+        <option value="vertical-rl">vertical-rl</option>
+        <option value="vertical-lr">vertical-lr</option>
+      </select>
+    </label>
+    <label class="toggle" for="direction">
+      Set direction to right-to-left
+      <input
+        class="example-placing-items__toggle toggle__element"
+        type="checkbox"
+        id="direction"
+      />
+      <span class="toggle__decor">
+          <span class="toggle__thumb"></span>
+        </span>
+    </label>
+    <div class="example-placing-items__grid grid-placing-items">
+      <div class="box span-row">Item 1 (span-row)</div>
+      <div class="box">Item 2</div>
+      <div class="box span-col">Item 3 has more text (span-col)</div>
+      <div class="box">Item 4</div>
+      <div class="box">Item 5</div>
+    </div>
+  </article>
+</section>
+<script type="module" src="/main.js"></script>
+<script>
+  const init = () => {
+    autoFillFitExample();
+    autoFlowExample();
+    gridDenseSparseExample();
+    examplePlacingItems();
+  };
+
+  function autoFillFitExample() {
+    const autoFillFit = document.querySelector('.auto-fill-fit');
+    const switcher = autoFillFit.querySelector('#switcher');
+    const grid = autoFillFit.querySelector('.auto-fill-fit-grid');
+
+    switcher.addEventListener('change', (evt) => {
+      grid.style.setProperty('--var-repeat', evt.target.value);
+      console.log(evt.target.value);
+    });
+  }
+
+  function autoFlowExample() {
+    const autoFlow = document.querySelector('.auto-flow');
+    const autoFlowSwitcherFlow = autoFlow.querySelector('#switcher-flow');
+    const autoFlowSwitcherWT = autoFlow.querySelector(
+      '#switcher-writing-mode'
+    );
+    const grid = autoFlow.querySelector('.grid-auto-flow');
+
+    const change = (prop) => {
+      return (evt) => {
+        grid.style.setProperty(prop, evt.target.value);
+      };
+    };
+
+    const changeFlow = change('--var-flow');
+    const changeWT = change('--var-mode');
+
+    autoFlowSwitcherFlow.addEventListener('change', changeFlow);
+    autoFlowSwitcherWT.addEventListener('change', changeWT);
+  }
+
+  function gridDenseSparseExample() {
+    const exampleRoot = document.querySelector(
+      '.grid-dense-sparse-example'
+    );
+    const examples = exampleRoot.querySelectorAll('.example');
+
+    examples.forEach((example) => {
+      const input = example.querySelector('.toggle__element');
+      const grid = example.querySelector('.grid-dense-sparse');
+
+      const flow = (input) => {
+        console.log(input);
+        return input.checked ? 'row dense' : 'row';
+      };
+      grid.style.setProperty('--var-flow', flow(input));
+
+      input.addEventListener('change', (e) => {
+        const currentInput = e.target;
+        grid.style.setProperty('--var-flow', flow(currentInput));
+      });
+    });
+  }
+
+  function examplePlacingItems() {
+    const exampleRoot = document.querySelector('.example-placing-items');
+    const toggleDirection = exampleRoot.querySelector(
+      '.example-placing-items__toggle'
+    );
+    const selectWT = exampleRoot.querySelector(
+      '.example-placing-items__select'
+    );
+    const grid = exampleRoot.querySelector('.example-placing-items__grid');
+
+    toggleDirection.addEventListener('change', (evt) => {
+      const input = evt.target;
+
+      if (input.checked) grid.style.setProperty('--var-direction', 'rtl');
+      else grid.style.setProperty('--var-direction', 'ltr');
+
+      console.log(grid.style.getPropertyValue('--var-direction'));
+    });
+
+    selectWT.addEventListener('change', () => {
+      console.log(selectWT);
+      grid.style.setProperty('--var-writing-mode', selectWT.value);
+    });
+  }
+
+  init();
+</script>
+</body>
+</html>

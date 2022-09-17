@@ -1,0 +1,139 @@
+.grid-lesson {
+  --flow-space: 1rem;
+
+  .simple-grid {
+    display: grid;
+    grid-template-columns: 5em 100px 30%;
+    grid-template-rows: 200px auto;
+    gap: 10px;
+  }
+
+  .intrinsic-grid {
+    display: grid;
+    grid-template-columns: min-content max-content fit-content(80ch);
+    grid-template-rows: auto auto;
+    gap: 1rem;
+  }
+
+  .min-max-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: 1fr auto;
+
+    & > *:nth-child(3) {
+      // width: 100%;
+      max-width: 450px;
+    }
+  }
+
+  .column-12-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-rows: 1fr;
+    gap: 1rem;
+  }
+
+  .repeating-fixed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 70rem;
+    background-color: lightcoral;
+  }
+
+  .repeating-responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 70rem;
+    background-color: lightsalmon;
+  }
+
+  .auto-fill-fit-grid {
+    --var-repeat: auto-fill;
+
+    display: grid;
+    grid-template-columns: repeat(var(--var-repeat), minmax(100px, 1fr));
+    grid-template-rows: 200px auto;
+    gap: var(--metric-gutter);
+    padding: var(--metric-gutter);
+    background: var(--color-stroke);
+  }
+
+  .grid-auto-flow {
+    --var-flow: row;
+    --var-mode: horizontal-tb; // vertical-rl, vertical-lr
+
+    writing-mode: var(--var-mode);
+    display: grid;
+    grid-auto-flow: var(--var-flow);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, minmax(100px, auto));
+    gap: 1rem;
+
+    padding: 1rem;
+    background-color: var(--color-stroke);
+  }
+
+  .spanning-tracks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem;
+
+    & > *:last-child {
+      grid-column-end: span 3;
+      grid-column: auto / span 3;
+    }
+  }
+
+  .grid-dense-sparse {
+    --var-flow: row;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: var(--var-flow);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 1rem;
+    padding: 1rem;
+
+    background-color: var(--color-stroke);
+    border-radius: 4px;
+
+    .span-row {
+      grid-row: auto / span 2;
+    }
+
+    .span-col {
+      grid-column: auto / span 2;
+    }
+  }
+
+  .grid-placing-items {
+    --var-direciton: "rtl";
+    --var-writing-mode: "horizontal-tb";
+    --var-packing: row dense;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-auto-flow: var(--var-packing);
+    gap: 10px;
+    padding: 1em;
+    max-width: 30rem;
+
+    background-color: var(--color-stroke);
+
+    direction: var(--var-direction);
+    writing-mode: var(--var-writing-mode);
+
+    & .span-row {
+      grid-row: auto / span 2;
+    }
+
+    & .span-col {
+      grid-column: auto / span 2;
+    }
+  }
+}

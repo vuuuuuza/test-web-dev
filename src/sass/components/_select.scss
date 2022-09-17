@@ -1,0 +1,10 @@
+.select {
+  padding: 0.5rem;
+  min-width: 12rem;
+  font: inherit;
+  border: 1px solid var(--color-stroke);
+
+  &:focus {
+    border-color: var(--color-primary);
+  }
+}

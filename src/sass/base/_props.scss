@@ -1,0 +1,33 @@
+@use "../abstracts/colors" as colors;
+@use "../abstracts/metric" as metric;
+@use "../abstracts/type" as type;
+@use "../abstracts/shadows" as shadows;
+
+:root {
+  // Colors
+  --color-primary: #{colors.$primary};
+  --color-primary-dark: #{colors.$primary-dark};
+  --color-primary-light: #{colors.$primary-light};
+  --color-primary-x-light: #{colors.$primary-x-light};
+
+  --color-light: #{colors.$light};
+  --color-dark: #{colors.$dark};
+  --color-off-white: #{colors.$off-white};
+
+  --color-mid: #{colors.$mid};
+  --color-mid-dark: #{colors.$mid-dark};
+
+  --color-stroke: #{colors.$stroke};
+
+  // Shadows
+  --shadow-generic: #{shadows.$generic};
+
+  // Fonts
+  --font-main: #{type.$main};
+  --font-mono: #{type.$mono};
+
+  // Metric
+  --metric-gutter: #{metric.$gutter};
+  --metric-box-spacing: #{metric.$box-spacing};
+  --metric-radius: #{metric.$radius};
+}

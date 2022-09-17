@@ -1,0 +1,8 @@
+.wrapper {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--metric-gutter);
+  width: clamp(16rem, 95vw, 70rem);
+  max-width: 100%;
+}
